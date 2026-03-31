@@ -214,38 +214,30 @@ document.addEventListener("DOMContentLoaded", () => {
     const breadcrumbContainer = document.querySelector("#dynamic-breadcrumbs");
     
     if (breadcrumbContainer) {
-        // Get the current filename (e.g., "flex.html")
+        // Get the current filename accurately
         const path = window.location.pathname;
         let page = path.split("/").pop(); 
 
-        // Handle cases where the URL ends in a slash (like the root domain)
+        // Default to index.html if the path is empty (homepage)
         if (page === "" || page === undefined) {
             page = "index.html";
         }
 
-        // Dictionary mapping all your filenames to their breadcrumb structure
         const breadcrumbMap = {
-            // Main Pages
             "index.html": { parent: null, current: "Home" },
             "about.html": { parent: null, current: "About Us" },
             "contact.html": { parent: null, current: "Contact Us" },
-
-            // Digital Printers Category
             "printers.html": { parent: null, current: "Digital Printers" },
             "flex.html": { parent: { name: "Digital Printers", url: "printers.html" }, current: "Flex" },
             "eco_solvent.html": { parent: { name: "Digital Printers", url: "printers.html" }, current: "Eco Solvent" },
             "uv_flated.html": { parent: { name: "Digital Printers", url: "printers.html" }, current: "UV Flatbed" },
             "uv_Hybrid.html": { parent: { name: "Digital Printers", url: "printers.html" }, current: "UV Hybrid" },
             "uv_roll_to_roll.html": { parent: { name: "Digital Printers", url: "printers.html" }, current: "UV Roll To Roll" },
-
-            // CNC Router Category
             "cnc-router.html": { parent: null, current: "CNC Router" },
             "cnc_Router_4'x8'.html": { parent: { name: "CNC Router", url: "cnc-router.html" }, current: "4' x 8'" },
             "cnc_Router_5'x10'.html": { parent: { name: "CNC Router", url: "cnc-router.html" }, current: "5' x 10'" },
             "cnc_Router_DoubleSpindle.html": { parent: { name: "CNC Router", url: "cnc-router.html" }, current: "Double Spindle" },
             "cnc_Router_PatternStone_Marking.html": { parent: { name: "CNC Router", url: "cnc-router.html" }, current: "Pattern/Stone Making" },
-
-            // CNC Laser Category
             "cnc-laser.html": { parent: null, current: "CNC Laser" },
             "cnc_Laser_2x3.html": { parent: { name: "CNC Laser", url: "cnc-laser.html" }, current: "2' x 3' CNC Laser" },
             "cnc_Laser_4x3.html": { parent: { name: "CNC Laser", url: "cnc-laser.html" }, current: "4' x 3' CNC Laser" },
@@ -253,19 +245,13 @@ document.addEventListener("DOMContentLoaded", () => {
             "cnc_Laser_8x4.html": { parent: { name: "CNC Laser", url: "cnc-laser.html" }, current: "8' x 4' CNC Laser" },
             "cnc_Laser_CCD.html": { parent: { name: "CNC Laser", url: "cnc-laser.html" }, current: "CCD" },
             "cnc_Laser_FiberLaser.html": { parent: { name: "CNC Laser", url: "cnc-laser.html" }, current: "Fiber Laser" },
-
-            // LED Display Category
             "led-display.html": { parent: null, current: "LED Display" },
             "led_Display_Indoor.html": { parent: { name: "LED Display", url: "led-display.html" }, current: "Indoor LED Display" },
             "led_Display_Outdoor.html": { parent: { name: "LED Display", url: "led-display.html" }, current: "Outdoor LED Display" },
             "led_Display_Vehicle.html": { parent: { name: "LED Display", url: "led-display.html" }, current: "Vehicle LED Display" },
             "led_Display_Rental.html": { parent: { name: "LED Display", url: "led-display.html" }, current: "Rental LED Display Services" },
-
-            // CNC Channel Bending Category
             "chennel-Bending.html": { parent: null, current: "CNC Channel Bending" },
             "chennel_Bending_Aluminium.html": { parent: { name: "CNC Channel Bending", url: "chennel-Bending.html" }, current: "Aluminum" },
-
-            // Video Gallery Category
             "video-gallery.html": { parent: null, current: "Video Gallery" },
             "complete_project.html": { parent: { name: "Video Gallery", url: "video-gallery.html" }, current: "Complete Project" }
         };
@@ -273,20 +259,21 @@ document.addEventListener("DOMContentLoaded", () => {
         const pageData = breadcrumbMap[page];
 
         if (pageData) {
-            let html = `<ul><li><a href="/Admark Code_Final/index.html"><i class="fa-solid fa-house"></i> Home</a></li>`;
+            // Notice: We use root "/" or relative paths now, not hardcoded folder names
+            let html = `<ul><li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>`;
             
-            // If it has a parent category, add the middle breadcrumb
             if (pageData.parent) {
-                html += `<li class="separator">/</li><li><a href="/Admark Code_Final/${pageData.parent.url}">${pageData.parent.name}</a></li>`;
+                html += `<li class="separator">/</li><li><a href="${pageData.parent.url}">${pageData.parent.name}</a></li>`;
             }
             
-            // Add the current page (unless we are on the homepage)
             if (page !== "index.html") {
                 html += `<li class="separator">/</li><li class="active">${pageData.current}</li>`;
             }
             
             html += `</ul>`;
             breadcrumbContainer.innerHTML = html;
+        } else {
+            console.warn("Breadcrumb Error: Current page filename '" + page + "' not found in breadcrumbMap.");
         }
     }
 });

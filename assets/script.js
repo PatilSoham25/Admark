@@ -210,23 +210,6 @@ document.querySelectorAll(".accordion-header").forEach(button => {
     });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  const toggleBtn = document.getElementById('chatbot-toggle-btn');
-  const closeBtn = document.getElementById('chatbot-close-btn');
-  const chatWindow = document.getElementById('chatbot-window');
-
-  // Open/Close chat when clicking the main floating button
-  toggleBtn.addEventListener('click', () => {
-    chatWindow.classList.toggle('hidden');
-  });
-
-  // Close chat when clicking the 'X' inside the header
-  closeBtn.addEventListener('click', () => {
-    chatWindow.classList.add('hidden');
-  });
-});
-
-
 document.addEventListener("DOMContentLoaded", () => {
     const breadcrumbContainer = document.querySelector("#dynamic-breadcrumbs");
     

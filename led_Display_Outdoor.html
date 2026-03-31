@@ -180,10 +180,12 @@
     .sub-product-title { font-size: 28px; }
 }
 
-      /* BASE STYLES & NEW FONT */
+         /* =========================================
+           BASE STYLES
+           ========================================= */
         * {
             box-sizing: border-box;
-            font-family: 'Poppins', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Applied new font */
+            font-family: 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
         }
         
         body {
@@ -193,94 +195,74 @@
             color: #333333;
         }
 
-        /* ===== NAVBAR ===== */
+        /* =========================================
+           NEW MODERN NAVBAR (DESKTOP) - MATCHING UI
+           ========================================= */
         .navbar {
-            display: grid;
-            /* Creates 3 columns: Logo (left), Menu (center), Empty space (right) to ensure perfect centering */
-            grid-template-columns: 200px 1fr 200px; 
+            display: flex;
+            justify-content: space-between;
             align-items: center;
-            background: white;
-            padding: 15px 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-            position: relative;
+            background: #ffffff;
+            padding: 15px 4%; /* Slightly more padding for breathing room */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03); /* Lighter shadow to match image */
+            position: sticky;
+            top: 0;
             z-index: 1000;
         }
 
         /* LOGO */
         .logo {
-            grid-column: 1;
-            display: flex;
-            justify-content: flex-start;
+            flex-shrink: 0;
         }
 
         .logo img {
-            height: 70px;
+            height: 65px; 
             width: auto;
+            transition: transform 0.3s ease;
         }
 
-        /* ===== MAIN MENU (GRID LAYOUT - CENTERED) ===== */
+        .logo:hover img {
+            transform: scale(1.02);
+        }
+
+        /* MAIN MENU */
         .main-menu {
-            grid-column: 2;
             display: flex;
-            justify-content: center; /* Centers the whole menu block horizontally */
+            justify-content: flex-end; 
         }
 
         .main-menu ul {
             list-style: none;
             padding: 0;
             margin: 0;
-            display: grid;
-            /* 5 equal columns so item 6 falls directly under item 1 */
-            grid-template-columns: repeat(5, auto); 
-            column-gap: 40px; 
-            row-gap: 15px;    
-            justify-items: center; 
+            display: flex;
             align-items: center;
+            gap: 22px; /* Increased gap to match the wide spacing in the image */
         }
 
         .main-menu ul li {
             position: relative;
-            width: 100%;
-            text-align: center;
-            display: flex;
-            justify-content: center;
         }
 
+        /* CLEAN TEXT LINKS */
         .main-menu ul li a {
             text-decoration: none;
-            color: #333333;
-            font-size: 14px;
-            font-weight: 600; /* Adjusted for the new font */
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            padding: 8px 0;
-            display: inline-block;
+            color: #555555; /* Dark grey text matching the image */
+            font-size: 14.5px;
+            font-weight: 500;
+            padding: 15px 0; /* Padding top/bottom for hover area, no left/right padding */
             transition: color 0.3s ease;
-            position: relative;
+            display: flex;
+            align-items: center;
         }
 
         .main-menu ul li a:hover {
-            color: #ff6600;
+            color: #0056b3; /* Clean text color change on hover, no background */
         }
 
-        /* Underline animation on hover */
-        .main-menu ul li > a::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 2px;
-            background-color: #ff6600;
-            transition: width 0.3s ease;
-        }
-
-        .main-menu ul li:hover > a::after {
-            width: 100%;
-        }
-
-        /* ===== DROPDOWN PANEL ===== */
+        /* =========================================
+           DROPDOWN PANEL (MODERNIZED)
+           ========================================= */
         .panel-dropdown {
             position: relative;
         }
@@ -290,12 +272,12 @@
             top: 100%; 
             left: 50%; 
             transform: translateX(-50%) translateY(10px);
-            min-width: 220px; 
+            min-width: 240px; 
             background: #ffffff;
-            padding: 10px 0;
+            padding: 12px 0;
             border-radius: 4px;
-            border-top: 3px solid #ff6600;
-            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid #f0f0f0;
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.08); 
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
@@ -306,69 +288,49 @@
         .panel-dropdown:hover .dropdown-panel {
             opacity: 1;
             visibility: visible;
-            transform: translateX(-50%) translateY(5px); 
+            transform: translateX(-50%) translateY(0); 
         }
 
         .dropdown-panel ul {
             display: flex;
             flex-direction: column; 
-            padding: 0;
-            margin: 0;
-            row-gap: 0;
-        }
-
-        .dropdown-panel ul li {
-            padding: 0;
-            margin: 0;
-            width: 100%;
-            justify-content: flex-start; 
-        }
-
-        .dropdown-panel ul li a::after {
-            display: none !important; 
+            gap: 0;
         }
 
         .dropdown-panel ul li a {
-            display: block;
-            font-size: 14px;
-            color: #444;
             padding: 10px 20px;
-            text-decoration: none;
+            font-size: 14px;
             font-weight: 500;
-            text-transform: none;
-            width: 100%;
-            text-align: left;
-            transition: all 0.2s ease;
+            color: #555;
+            background: transparent;
         }
 
         .dropdown-panel ul li a:hover {
-            background: #fff5eb;
-            color: #ff6600;
-            padding-left: 25px; 
+            background: #fafafa;
+            color: #0056b3;
+            padding-left: 20px; 
         }
 
-        /* ===== HAMBURGER MENU BUTTON (Mobile) ===== */
+        /* =========================================
+           MOBILE MENU (HAMBURGER)
+           ========================================= */
         .mobile-menu-btn {
             display: none;
-            font-size: 28px;
+            font-size: 26px;
             cursor: pointer;
             color: #333;
             background: none;
             border: none;
-            grid-column: 3; /* Places button on the far right */
-            justify-self: end;
+            padding: 5px;
         }
 
-        /* ===== RESPONSIVE DESIGN (Mobile) ===== */
-        @media (max-width: 1024px) {
+        @media (max-width: 1150px) {
             .navbar {
-                display: flex; /* Switch back to flex for mobile */
-                justify-content: space-between;
-                padding: 10px 20px;
+                padding: 15px 20px;
             }
 
             .logo img {
-                height: 60px;
+                height: 55px;
             }
 
             .mobile-menu-btn {
@@ -382,8 +344,8 @@
                 left: 0;
                 width: 100%;
                 background: white;
-                box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
-                z-index: 1000;
+                box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.05);
+                border-top: 1px solid #eee;
             }
 
             .main-menu.show {
@@ -391,42 +353,33 @@
             }
 
             .main-menu ul {
-                display: flex; 
                 flex-direction: column;
                 align-items: flex-start;
-                padding: 0;
-                width: 100%;
+                padding: 10px 20px;
+                gap: 0;
             }
 
             .main-menu ul li {
                 width: 100%;
-                justify-content: flex-start;
-                border-bottom: 1px solid #eee;
+                border-bottom: 1px solid #f5f5f5;
             }
 
             .main-menu ul li a {
-                padding: 15px 20px;
-                text-align: left;
+                padding: 15px 10px;
                 width: 100%;
-            }
-
-            .main-menu ul li > a::after {
-                display: none;
             }
 
             .dropdown-panel {
-                width: 100%;
-                position: relative;
-                left: 0;
-                transform: none !important; 
+                position: static;
+                transform: none !important;
                 box-shadow: none;
                 border: none;
-                border-top: 1px solid #eee;
                 background: #fafafa;
                 padding: 0;
                 opacity: 1;
                 visibility: visible;
                 display: none;
+                min-width: 100%;
             }
 
             .panel-dropdown.active .dropdown-panel {

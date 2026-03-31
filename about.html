@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Admark Digitech</title>
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/style.css">
+    
+  <meta name="google-site-verification" content="a5hVMTrBC1nBDANgXcmGX__PtaXU4K9Z3UtTAbK9E2U" />
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E7T20Z6GZ3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-E7T20Z6GZ3');
+  </script>
+    <style>
+         /* BASE STYLES & NEW FONT */
+        * {
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Applied new font */
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333333;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            display: grid;
+            /* Creates 3 columns: Logo (left), Menu (center), Empty space (right) to ensure perfect centering */
+            grid-template-columns: 200px 1fr 200px; 
+            align-items: center;
+            background: white;
+            padding: 15px 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            position: relative;
+            z-index: 1000;
+        }
+
+        /* LOGO */
+        .logo {
+            grid-column: 1;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .logo img {
+            height: 70px;
+            width: auto;
+        }
+
+        /* ===== MAIN MENU (GRID LAYOUT - CENTERED) ===== */
+        .main-menu {
+            grid-column: 2;
+            display: flex;
+            justify-content: center; /* Centers the whole menu block horizontally */
+        }
+
+        .main-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            /* 5 equal columns so item 6 falls directly under item 1 */
+            grid-template-columns: repeat(5, auto); 
+            column-gap: 40px; 
+            row-gap: 15px;    
+            justify-items: center; 
+            align-items: center;
+        }
+
+        .main-menu ul li {
+            position: relative;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        .main-menu ul li a {
+            text-decoration: none;
+            color: #333333;
+            font-size: 14px;
+            font-weight: 600; /* Adjusted for the new font */
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            padding: 8px 0;
+            display: inline-block;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .main-menu ul li a:hover {
+            color: #ff6600;
+        }
+
+        /* Underline animation on hover */
+        .main-menu ul li > a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: #ff6600;
+            transition: width 0.3s ease;
+        }
+
+        .main-menu ul li:hover > a::after {
+            width: 100%;
+        }
+
+        /* ===== DROPDOWN PANEL ===== */
+        .panel-dropdown {
+            position: relative;
+        }
+
+        .dropdown-panel {
+            position: absolute;
+            top: 100%; 
+            left: 50%; 
+            transform: translateX(-50%) translateY(10px);
+            min-width: 220px; 
+            background: #ffffff;
+            padding: 10px 0;
+            border-radius: 4px;
+            border-top: 3px solid #ff6600;
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        /* Show Dropdown on Hover */
+        .panel-dropdown:hover .dropdown-panel {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(5px); 
+        }
+
+        .dropdown-panel ul {
+            display: flex;
+            flex-direction: column; 
+            padding: 0;
+            margin: 0;
+            row-gap: 0;
+        }
+
+        .dropdown-panel ul li {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            justify-content: flex-start; 
+        }
+
+        .dropdown-panel ul li a::after {
+            display: none !important; 
+        }
+
+        .dropdown-panel ul li a {
+            display: block;
+            font-size: 14px;
+            color: #444;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: 500;
+            text-transform: none;
+            width: 100%;
+            text-align: left;
+            transition: all 0.2s ease;
+        }
+
+        .dropdown-panel ul li a:hover {
+            background: #fff5eb;
+            color: #ff6600;
+            padding-left: 25px; 
+        }
+
+        /* ===== HAMBURGER MENU BUTTON (Mobile) ===== */
+        .mobile-menu-btn {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: #333;
+            background: none;
+            border: none;
+            grid-column: 3; /* Places button on the far right */
+            justify-self: end;
+        }
+
+        /* ===== RESPONSIVE DESIGN (Mobile) ===== */
+        @media (max-width: 1024px) {
+            .navbar {
+                display: flex; /* Switch back to flex for mobile */
+                justify-content: space-between;
+                padding: 10px 20px;
+            }
+
+            .logo img {
+                height: 60px;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .main-menu {
+                display: none; 
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+            }
+
+            .main-menu.show {
+                display: block;
+            }
+
+            .main-menu ul {
+                display: flex; 
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0;
+                width: 100%;
+            }
+
+            .main-menu ul li {
+                width: 100%;
+                justify-content: flex-start;
+                border-bottom: 1px solid #eee;
+            }
+
+            .main-menu ul li a {
+                padding: 15px 20px;
+                text-align: left;
+                width: 100%;
+            }
+
+            .main-menu ul li > a::after {
+                display: none;
+            }
+
+            .dropdown-panel {
+                width: 100%;
+                position: relative;
+                left: 0;
+                transform: none !important; 
+                box-shadow: none;
+                border: none;
+                border-top: 1px solid #eee;
+                background: #fafafa;
+                padding: 0;
+                opacity: 1;
+                visibility: visible;
+                display: none;
+            }
+
+            .panel-dropdown.active .dropdown-panel {
+                display: block;
+            }
+        }
+
+
+          /* =========================================
+           FOOTER
+           ========================================= */
+        footer {
+            background: #333;
+            color: white;
+            padding-bottom: 5px;
+            font-size: 18px; 
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 1200px;
+            margin: auto;
+            flex-wrap: wrap;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 300px;
+            padding: 10px;
+        }
+
+        .footer-section h3 {
+            color: #ff6600;
+            margin-bottom: 12px;
+            font-size: 22px;
+        }
+
+        .footer-section.contact a {
+            color: white !important;
+            text-decoration: none !important;
+            font-weight: normal;
+        }
+
+        .footer-section.contact a:hover {
+            color: #ff6600 !important;
+            text-decoration: underline !important;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 15px;
+        }
+
+        .footer-section ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            transition: color 0.3s ease, text-decoration 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: #ff6600;
+            text-decoration: underline;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            justify-content: center; 
+            margin-right: 205px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 24px;
+            transition: transform 0.2s ease, color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #ff6600;
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 480px) {
+            .social-icons {
+                gap: 10px;
+                font-size: 20px;
+            }
+            .social-icons a {
+                font-size: 20px;
+            }
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 16px;
+            padding-top: 10px;
+            border-top: 1px solid #ff6600;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 1024px) {
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-section {
+                padding: 10px 0;
+            }
+        }
+
+        /* Google Map */
+        .map-container {
+            width: 100%;
+            max-width: 550px;
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 300px;
+            border: 0;
+        }
+
+        @media (max-width: 768px) {
+            .map-container iframe { height: 250px; }
+        }
+
+        @media (max-width: 480px) {
+            .map-container iframe { height: 200px; }
+        }
+
+        /* =========================================
+           FIXED BUTTONS
+           ========================================= */
+        .fixed-buttons .btn-circle {
+            width: 50px;
+            height: 50px;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            line-height: 1;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .whatsapp-btn {
+            background-color: #25D366;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #1ebe5b;
+        }
+
+        .scroll-top-btn1 {
+            background-color: #ff6600;
+        }
+
+        .scroll-top-btn1:hover {
+            background-color: #0090f7;
+        }
+
+        @media (max-width: 480px) {
+            .fixed-buttons .btn-circle {
+                width: 45px;
+                height: 45px;
+                font-size: 20px;
+            }
+        }
+
+         /* =========================================
+           BREADCRUMBS
+           ========================================= */
+        .breadcrumbs {
+            background-color: #f4f6f9; 
+            padding: 15px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .breadcrumb-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .breadcrumbs ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            font-family: inherit;
+        }
+
+        .breadcrumbs ul li {
+            display: inline-flex;
+            align-items: center;
+            color: #555;
+        }
+
+        .breadcrumbs ul li a {
+            text-decoration: none;
+            color: #0056b3; 
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px; 
+        }
+
+        .breadcrumbs ul li a:hover {
+            color: #ff6600; 
+        }
+
+        .breadcrumbs ul li.separator {
+            margin: 0 10px;
+            font-size: 12px;
+            color: #999;
+        }
+
+        .breadcrumbs ul li.active {
+            color: #333;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+     <header>
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="/Admark Code_Final/assets/logo1.jpg" alt="Admark Digitech Logo">
+                </a>
+            </div>
+
+            <div class="mobile-menu-btn" id="mobile-menu-btn">
+                ☰
+            </div>
+
+            <nav class="main-menu" id="main-menu">
+                <ul>
+                    <li><a href="/Admark Code_Final/index.html">Home</a></li>
+                    <li><a href="/Admark Code_Final/about.html">About Us</a></li>
+
+                    <li class="panel-dropdown">
+                        <a href="/Admark Code_Final/printers.html">Digital Printers</a>
+                        <div class="dropdown-panel">
+                            <ul>
+                                <li><a href="/Admark Code_Final/flex.html">Flex</a></li>
+                                <li><a href="/Admark Code_Final/eco_solvent.html">Eco Solvent</a></li>
+                                <li><a href="/Admark Code_Final/uv_flated.html">UV Flatbed</a></li>
+                                <li><a href="/Admark Code_Final/uv_Hybrid.html">UV Hybrid</a></li>
+                                <li><a href="/Admark Code_Final/uv_roll_to_roll.html">UV Roll To Roll</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="panel-dropdown">
+                        <a href="/Admark Code_Final/cnc-router.html">CNC Router</a>
+                        <div class="dropdown-panel">
+                            <ul>
+                                <li><a href="/Admark Code_Final/cnc_Router_4'x8'.html">4' x 8'</a></li>
+                                <li><a href="/Admark Code_Final/cnc_Router_5'x10'.html">5' x 10'</a></li>
+                                <li><a href="/Admark Code_Final/cnc_Router_DoubleSpindle.html">Double Spindle</a></li>
+                                <li><a href="/Admark Code_Final/cnc_Router_PatternStone_Marking.html">Pattern/Stone Making</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="panel-dropdown">
+                        <a href="/Admark Code_Final/cnc-laser.html">CNC Laser</a>
+                        <div class="dropdown-panel">
+                            <ul>
+                                <li><a href="/Admark Code_Final/cnc_Laser_2x3.html">2' x 3' CNC Laser</a></li>
+                                <li><a href="/Admark Code_Final/cnc_Laser_4x3.html">4' x 3' CNC Laser</a></li>
+                                <li><a href="/Admark Code_Final/cnc_Laser_4x4.html">4' x 4' CNC Laser</a></li>
+                                <li><a href="/Admark Code_Final/cnc_Laser_8x4.html">8' x 4' CNC Laser</a></li>
+                                <li><a href="/Admark Code_Final/cnc_Laser_CCD.html">CCD</a></li>
+                                <li><a href="/Admark Code_Final/cnc_Laser_FiberLaser.html">Fiber Laser</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="panel-dropdown">
+                        <a href="/Admark Code_Final/led-display.html">LED Display</a>
+                        <div class="dropdown-panel">
+                            <ul>
+                                <li><a href="/Admark Code_Final/led_Display_Indoor.html">Indoor LED Display</a></li>
+                                <li><a href="/Admark Code_Final/led_Display_Outdoor.html">Outdoor LED Display</a></li>
+                                <li><a href="/Admark Code_Final/led_Display_Vehicle.html">Vehicle LED Display</a></li>
+                                <li><a href="/Admark Code_Final/led_Display_Rental.html">Rental LED Display Services</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="panel-dropdown">
+                        <a href="/Admark Code_Final/chennel-Bending.html">CNC Channel Bending</a>
+                        <div class="dropdown-panel">
+                            <ul>
+                                <li><a href="/Admark Code_Final/chennel_Bending_Aluminium.html">Aluminum</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="panel-dropdown">
+                        <a href="/Admark Code_Final/video-gallery.html">Video Gallery</a>
+                        <div class="dropdown-panel">
+                            <ul>
+                                <li><a href="/complete_project.html">Complete Project</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li><a href="/Admark Code_Final/contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="breadcrumbs">
+        <div class="breadcrumb-container" id="dynamic-breadcrumbs">
+            </div>
+    </div>
+     
+     <section class="about-section">
+        <h1 class="section-title-about">ABOUT US</h1>
+        <div class="about-container">
+            <div class="about-card fade-in">
+                <h2>Company Overview</h2>
+                <p>Incorporated in 2004, Admark Digitech is a leading company in the trading, importing, and supplying of high-quality printing machines and components. We provide both indoor and outdoor printing solutions with superior performance and efficiency.</p>
+            </div>
+
+            <div class="about-card slide-in">
+                <h2>Our Mission</h2>
+                <p>To provide high-performance printing solutions to meet the growing demands of advertising, publishing, and industrial applications. We ensure quality products with excellent after-sales service.</p>
+            </div>
+
+            <div class="about-card fade-in">
+                <h2>Our Leadership</h2>
+                <p>Under the guidance of Mr. Deepak Deshmukh, we have grown tremendously in the industry, building a strong reputation for quality and reliability.</p>
+            </div>
+
+            <div class="about-card fade-in">
+                <img src="assets/images/A1.jpg" alt="Mr. Deepak Deshmukh" class="leader-image" style="width: 100%;">
+            </div>
+            
+            <div class="about-card slide-in">
+                <h2>Key Facts</h2>
+                <ul>
+                    <li><strong>Nature of Business</strong> <span>Manufacturer</span></li>
+                    <li><strong>CEO</strong> <span>Deepak Deshmukh</span></li>
+                    <li><strong>Employees</strong> <span>26-50 People</span></li>
+                    <li><strong>Annual Turnover</strong> <span>₹5 - ₹25 Crore</span></li>
+                    <li><strong>GST No.</strong> <span>27AAMCA4305K1ZL</span></li>
+                </ul>
+            </div>
+            <div class="about-card fade-in">
+                <img src="assets/images/A1.jpg" alt="Mr. Deepak Deshmukh" class="leader-image" style="width: 100%;">
+            </div>
+        </div>
+    </section>
+
+     <footer>
+        <div class="footer-content">
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+                <p>📍 Address: 97 - 100, G Wing, 3rd Floor, KK Market, Pune Satara Road, Behind Shankar Maharaj Math, Balajinagar, Pune PIN: 411043</p>
+                <p>📞 Phone: <a href="tel:+919743929666">+91 9743929666</a></p>
+                <p>📞 Phone: <a href="tel:+919075557349">+91 9075557349</a></p>
+                <p>📞 Phone: <a href="tel:+919765560814">+91 9765560814</a></p>
+                <p>📧 Email: <a href="mailto:Anita@admarkdigitek.com">Anita@admarkdigitek.com</a></p>
+                <p>📧 Email: <a href="mailto:Gandharvdeshmukh@gmail.com">Gandharvdeshmukh@gmail.com</a></p>
+            </div>
+
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/about.html">About Us</a></li>
+                    <li><a href="/video-gallery.html">Video Gallery</a></li>
+                    <li><a href="/contact.html">Contact Us</a></li>
+                </ul>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/admarkdigitech?igsh=MTJtb3JscDA2NnlibQ==" target="_blank">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/admark.digitech?mibextid=wwXIfr" target="_blank">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/admark-digitech-384762358" target="_blank">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3424.609051563073!2d73.85773827465097!3d18.469326570738595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2eab8a1c28f73%3A0xf66b73ea426aabbe!2sAdmark%20Digitech%20Pvt%20Ltd!5e1!3m2!1sen!2sin!4v1742989654384!5m2!1sen!2sin"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Admark Digitech Private Limited. All Rights Reserved.</p>
+            <p>Developed By DW Innovation Pvt. Ltd.</p>
+        </div>
+
+        <div class="fixed-buttons">
+            <a href="https://wa.me/919743592555?text=Hello%20Admark%20Digitech,%20I%20need%20to%20enquire." target="_blank" class="btn-circle whatsapp-btn">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+
+            <button id="scrollToTop" class="btn-circle scroll-top-btn1">
+                <i class="fa-solid fa-arrow-up"></i>
+            </button>
+        </div>
+    </footer>
+
+        <div id="chatbot-container">
+  <button id="chatbot-toggle-btn">💬</button>
+
+  <div id="chatbot-window" class="hidden">
+    
+    <div class="chat-header">
+      <span>Support Chat</span>
+      <button id="chatbot-close-btn">&times;</button>
+    </div>
+    
+    <div class="chat-body">
+      <div class="message bot-message">
+        <p>Hello! How can I help you today?</p>
+      </div>
+      </div>
+    
+    <div class="chat-footer">
+      <input type="text" id="chat-input" placeholder="Type a message...">
+      <button id="chat-send-btn">Send</button>
+    </div>
+
+  </div>
+</div>
+
+    <script src="assets/script.js"></script>
+</body>
+</html>

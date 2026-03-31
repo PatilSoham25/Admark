@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Printers - Admark Digitech</title>
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- <script src="/assets/script.js" defer></script> -->
+      <meta name="google-site-verification" content="a5hVMTrBC1nBDANgXcmGX__PtaXU4K9Z3UtTAbK9E2U" />
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E7T20Z6GZ3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-E7T20Z6GZ3');
+  </script>
+
+    <style>
+    /* BASE TYPOGRAPHY & COLOR */
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f9; /* Soft off-white for contrast */
+            color: #333;
+        }
+
+        /* NEW: Modern Badge Banners */
+        .product-banner {
+            text-align: center;
+            padding: 60px 20px 10px;
+            margin-bottom: 20px;
+        }
+
+        .product-banner h1 {
+            font-size: 28px;
+            font-weight: 800;
+            color: #1f2937;
+            background: #ffffff;
+            display: inline-block;
+            margin: 0;
+            padding: 12px 40px;
+            border-radius: 50px; /* Pill shape */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border-bottom: 4px solid #ff6600; /* Brand accent */
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+        
+        /* Unified Container System */
+        /* This single setup flawlessly handles 1, 3, or 5 products */
+        .product-section1, 
+        .product-section3, 
+        .product-section4, 
+        .product-section5 {
+            padding: 20px 5% 60px;
+        }
+
+        .product-container1, 
+        .product-container3, 
+        .product-container4, 
+        .product-container5 {
+            display: flex;
+            justify-content: center;
+        }
+
+        .product-grid1, 
+        .product-grid3, 
+        .product-grid4, 
+        .product-grid5 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        /* Modern Product Card */
+        .product-card1 {
+            background: #ffffff;
+            width: 100%;
+            max-width: 340px; /* Ensures consistent sizing */
+            border-radius: 16px;
+            border: 1px solid #e5e7eb;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+        }
+
+        /* Hover Interactions */
+        .product-card1:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-color: #ff6600; /* Subtle brand border on hover */
+        }
+
+        /* Image Styling with Subtle Zoom */
+        .product-image1 {
+            width: 100%;
+            height: 240px;
+            overflow: hidden;
+            background: #ffffff;
+        }
+
+        .product-image1 img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Ensures the whole printer is visible */
+            padding: 10px;
+            transition: transform 0.6s ease;
+        }
+
+        .product-card1:hover .product-image1 img {
+            transform: scale(1.08); /* Zoom effect on hover */
+        }
+
+        /* Product Info Typography */
+        .product-info1 {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            padding: 25px 20px;
+            text-align: left;
+            background: #ffffff;
+        }
+
+        .product-info1 h3 {
+            font-size: 18px;
+            color: #111827;
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .product-info1 p {
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 25px;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        /* Full-Width Gradient Button */
+        .product-btn1 {
+            padding: 14px 20px;
+            background: linear-gradient(135deg, #ff8c00 0%, #ff6600 100%);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: box-shadow 0.3s ease, transform 0.2s ease;
+            font-size: 15px;
+            font-weight: 600;
+            text-align: center;
+            display: block;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .product-btn1:hover {
+            box-shadow: 0 8px 15px rgba(255, 102, 0, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .product-banner {
+                padding: 40px 15px 10px;
+            }
+            .product-banner h1 {
+                font-size: 22px;
+                padding: 10px 25px;
+            }
+            .product-grid1, .product-grid3, .product-grid4, .product-grid5 {
+                gap: 20px;
+            }
+            .product-card1 {
+                max-width: 100%; /* Full width on mobile phones */
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header id="header"></header>
+
+    <div class="breadcrumbs">
+        <div class="breadcrumb-container" id="dynamic-breadcrumbs">
+            </div>
+    </div>
+    
+     <section class="product-banner">
+        <h1>512 42 PL</h1>
+    </section>
+
+    <section class="product-section4">
+        <div class="product-container4">
+            <div class="product-grid4">
+                
+                <div class="product-card1">
+                    <div class="product-image1">
+                        <img src="assets/images/All_Products/Flex/512 42 PL.jpg" alt="Konica 512/42PL">
+                    </div>
+                    <div class="product-info1">
+                        <h3>Single Model Admark CK8</h3>
+                        <p>A durable, cost-effective flex printer ideal for large-format outdoor advertising with consistent solvent-based output.</p>
+                        <a href="flex_512 42 PL.html" class="product-btn1">View Product</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="product-banner">
+        <h1>512i</h1>
+    </section>
+
+    <section class="product-section5">
+        <div class="product-container5">
+            <div class="product-grid5">
+                
+                <div class="product-card1">
+                    <div class="product-image1">
+                        <img src="assets/images/All_Products/Flex/512 i 1.jpg" alt="Konica 512/42PL">
+                    </div>
+                    <div class="product-info1">
+                        <h3>Admark CK8+ 30 PL</h3>
+                        <p> A stable and efficient flex printer ideal for high-quality outdoor prints.</p>
+                        <a href="flex_Admark_CK8+30PL.html" class="product-btn1">View Product</a>
+                    </div>
+                </div>
+
+                <div class="product-card1">
+                    <div class="product-image1">
+                        <img src="assets/images/All_Products/Flex/512 i 2.jpg" alt="Konica 512I/30PL">
+                    </div>
+                    <div class="product-info1">
+                        <h3>Aethra C8 Positive Pressure 30 PL</h3>
+                        <p>Ensures smooth ink flow and reduced clogging for consistent output.</p>
+                        <a href="flex_AethraC8_positivepress.html" class="product-btn1">View Product</a>
+                    </div>
+                </div>
+                 
+                <div class="product-card1">
+                    <div class="product-image1">
+                        <img src="assets/images/All_Products/Flex/512 i 3.jpg" alt="Konica 512I/30PL">
+                    </div>
+                    <div class="product-info1">
+                        <h3>Allwin 512i C8/C8+ 30 PL Negative Pressure </h3>
+                        <p>A reliable printer with negative pressure for fine ink control and sharp prints.</p>
+                        <a href="flex_Allwin512i_C8.html" class="product-btn1">View Product</a>
+                    </div>
+                </div>
+
+                <div class="product-card1">
+                    <div class="product-image1">
+                        <img src="assets/images/All_Products/Flex/512 i 4.jpg" alt="Konica 512/42PL">
+                    </div>
+                    <div class="product-info1">
+                        <h3>Aethra 512i A8 30 PL(Metal) Negative Pressure</h3>
+                        <p>Metal-body printer offering durability and precision in high-volume printing.</p>
+                        <a href="flex_Aethra512i_A8.html" class="product-btn1">View Product</a>
+                    </div>
+                </div>
+
+                <div class="product-card1">
+                    <div class="product-image1">
+                        <img src="assets/images/All_Products/Flex/512 i 5.jpeg" alt="Konica 512/42PL">
+                    </div>
+                    <div class="product-info1">
+                        <h3>Aethra 512i A8+ 30 PL Negative Pressure</h3>
+                        <p>Advanced flex printer with stable negative pressure system and enhanced print clarity.</p>
+                        <a href="flex_Aethra512i_A8+.html" class="product-btn1">View Product</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="product-banner">
+        <h1>1024i 30/13 PL Negative Pressure</h1>
+    </section>
+
+    <section class="product-section3">
+        <div class="product-container3">
+            <div class="product-grid3">
+                
+                <div class="product-card1">
+                    <div class="product-image1">
+                        <img src="assets/images/All_Products/Flex/Allwin C8+.avif" alt="Konica 512/42PL">
+                    </div>
+                    <div class="product-info1">
+                        <h3>Allwin 1024i C8+ 30/13 PL Negative Pressure</h3>
+                        <p> A versatile flex printer offering balanced speed and sharpness for large-scale output.</p>
+                        <a href="flex_Allwin1024i_C8+.html" class="product-btn1">View Product</a>
+                    </div>
+                </div>
+
+                <div class="product-card1">
+                    <div class="product-image1">
+                        <img src="assets/images/All_Products/Flex/Aethra 1024i_A8+_1.jpeg" alt="Konica 512I/30PL">
+                    </div>
+                    <div class="product-info1">
+                        <h3>Aethra 1024i A8+ 30/13 PL Negative Pressure </h3>
+                        <p>High-performance printer built for superior quality and reliable production.</p>
+                        <a href="flex_Aethra1024i_A8+.html" class="product-btn1">View Product</a>
+                    </div>
+                </div>
+                 
+                <div class="product-card1">
+                    <div class="product-image1">
+                        <img src="assets/images/All_Products/Flex/Aethra R8i.jpeg" alt="Konica 512I/30PL">
+                    </div>
+                    <div class="product-info1">
+                        <h3>Aethra 1024i R8i 30/13 PL Negative Pressure </h3>
+                        <p>Industrial-grade model delivering ultra-precise prints with durable performance for heavy-duty jobs.</p>
+                        <a href="flex_Aethra1024i_R8i.html" class="product-btn1">View Product</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="product-banner">
+        <h1>Starfire 25/10 PL</h1>
+    </section>
+
+    <section class="product-section4">
+        <div class="product-container4">
+            <div class="product-grid4">
+                
+                <div class="product-card1">
+                    <div class="product-image1">
+                        <img src="assets/images/All_Products/Flex/Starfire.jpeg" alt="Konica 512/42PL">
+                    </div>
+                    <div class="product-info1">
+                        <h3>Aethra Starfire AS4 25/10 PL Negative Pressure</h3>
+                        <p>A high-speed, industrial flex printer delivering ultra-sharp and durable large-format prints using Starfire technology.</p>
+                        <a href="flex_AethraStarfire_AS4.html" class="product-btn1">View Product</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="footer"></footer>
+
+        <div id="chatbot-container">
+  <button id="chatbot-toggle-btn">💬</button>
+
+  <div id="chatbot-window" class="hidden">
+    
+    <div class="chat-header">
+      <span>Support Chat</span>
+      <button id="chatbot-close-btn">&times;</button>
+    </div>
+    
+    <div class="chat-body">
+      <div class="message bot-message">
+        <p>Hello! How can I help you today?</p>
+      </div>
+      </div>
+    
+    <div class="chat-footer">
+      <input type="text" id="chat-input" placeholder="Type a message...">
+      <button id="chat-send-btn">Send</button>
+    </div>
+
+  </div>
+</div>
+
+    <script src="assets/script.js"></script>
+</body>
+</html>

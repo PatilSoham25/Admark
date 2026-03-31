@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNC Router - Admark Digitech</title>
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+     <meta name="google-site-verification" content="a5hVMTrBC1nBDANgXcmGX__PtaXU4K9Z3UtTAbK9E2U" />
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E7T20Z6GZ3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-E7T20Z6GZ3');
+  </script>
+
+    <style>
+    /* Base Resets & Typography */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+        }
+
+        /* Clean Typography Banner */
+        .product-banner {
+            text-align: center;
+            background: transparent;
+            padding: 60px 20px 20px;
+            margin-bottom: 40px;
+        }
+
+        .product-banner h1 {
+            font-size: 42px;
+            font-weight: 800;
+            color: #1a1a1a;
+            position: relative;
+            display: inline-block;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        /* Stylish Orange Underline Accent */
+        .product-banner h1::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -15px;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: #ff6600;
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+
+        .product-banner:hover h1::after {
+            width: 120px; 
+        }
+
+        /* Product Section & Grid */
+        .product-section {
+            padding: 20px 10% 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            width: 100%;
+        }
+
+        /* Redesigned Product Card */
+        .product-card {
+            background: transparent;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            transition: transform 0.4s ease, filter 0.4s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Image Styling with Hover Zoom */
+        .product-image {
+            height: 260px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        /* Overlapping Product Info */
+        .product-info {
+            background: white;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            padding: 30px 25px 25px;
+            margin-top: -30px; /* Pulls text box up over the image */
+            margin-left: 15px;
+            margin-right: 15px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            z-index: 2;
+            text-align: center;
+        }
+
+        .product-info h3 {
+            font-size: 22px;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .product-info p {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        /* Modern Pill Button */
+        .product-btn {
+            padding: 12px 24px;
+            background: transparent;
+            color: #ff6600;
+            text-decoration: none;
+            border-radius: 30px;
+            border: 2px solid #ff6600;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: auto;
+        }
+
+        .product-card:hover .product-btn,
+        .product-btn:hover {
+            background: #ff6600;
+            color: white;
+            box-shadow: 0 8px 20px rgba(255, 102, 0, 0.3);
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 1024px) {
+            .product-section {
+                padding: 20px 5% 50px;
+            }
+            .product-grid {
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .product-banner {
+                padding: 40px 15px 20px;
+            }
+            .product-banner h1 {
+                font-size: 32px;
+            }
+            .product-grid {
+                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+                gap: 25px;
+            }
+            .product-info {
+                padding: 25px 20px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-banner {
+                padding: 30px 10px 15px;
+            }
+            .product-banner h1 {
+                font-size: 28px;
+            }
+            .product-grid {
+                grid-template-columns: 1fr; /* Stack vertically on small phones */
+            }
+            .product-image {
+                height: 220px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header id="header"></header>
+
+    <div class="breadcrumbs">
+        <div class="breadcrumb-container" id="dynamic-breadcrumbs">
+            </div>
+    </div>
+    
+    <!-- Banner Section -->
+    <section class="product-banner">
+        <h1>Our CNC Routers</h1>
+    </section>
+
+    <section class="product-section">
+        <div class="product-grid">
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="assets/images/All_Products/CNC_Router/4' x 8'.jpg" alt="CNC Router 4' x 8'">
+                </div>
+                <div class="product-info">
+                    <h3>4' x 8'</h3>
+                    <p>Ideal for standard plywood sheets, the 4' x 8' CNC router is commonly used in woodworking, cabinetry, and sign-making. It offers great precision and is perfect for small to medium-scale production.</p>
+                    <a href="cnc_Router_4'x8'.html" class="product-btn">View Product</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="assets/images/All_Products/CNC_Router/5' x 10'.jpg" alt="CNC Router 5' x 10'">
+                </div>
+                <div class="product-info">
+                    <h3>5' x 10'</h3>
+                    <p>The 5' x 10' CNC router features a larger cutting area, suitable for oversized materials and high-volume tasks. It's widely used in industrial applications requiring extended workspace and efficiency.</p>
+                    <a href="cnc_Router_5'x10'.html" class="product-btn">View Product</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="assets/images/All_Products/CNC_Router/double_spindle.jpg" alt="Double Spindle CNC Router">
+                </div>
+                <div class="product-info">
+                    <h3>Double Spindle</h3>
+                    <p>A Double Spindle CNC router features two cutting heads, allowing it to perform dual operations simultaneously. It boosts productivity by cutting two parts at once or using different tools in one setup.</p>
+                    <a href="cnc_Router_DoubleSpindle.html" class="product-btn">View Product</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="assets/images/All_Products/CNC_Router/Pattern_Stone_making.jpg" alt="Pattern/Stone Making CNC Router">
+                </div>
+                <div class="product-info">
+                    <h3>Pattern/Stone Making</h3>
+                    <p>This CNC router is specialized for carving intricate patterns on stone, marble, or granite. It's ideal for monuments, decorative stonework, and detailed engraving applications.</p>
+                    <a href="cnc_Router_PatternStone_Marking.html" class="product-btn">View Product</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="footer"></footer>
+        <div id="chatbot-container">
+  <button id="chatbot-toggle-btn">💬</button>
+
+  <div id="chatbot-window" class="hidden">
+    
+    <div class="chat-header">
+      <span>Support Chat</span>
+      <button id="chatbot-close-btn">&times;</button>
+    </div>
+    
+    <div class="chat-body">
+      <div class="message bot-message">
+        <p>Hello! How can I help you today?</p>
+      </div>
+      </div>
+    
+    <div class="chat-footer">
+      <input type="text" id="chat-input" placeholder="Type a message...">
+      <button id="chat-send-btn">Send</button>
+    </div>
+
+  </div>
+</div>
+
+    <script src="assets/script.js"></script>
+</body>
+</html>

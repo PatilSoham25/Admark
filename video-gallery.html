@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Videos - Admark Digitech</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- <script src="/assets/script.js" defer></script> -->
+      <meta name="google-site-verification" content="a5hVMTrBC1nBDANgXcmGX__PtaXU4K9Z3UtTAbK9E2U" />
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E7T20Z6GZ3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-E7T20Z6GZ3');
+  </script>
+
+  <style>
+      /* BASE STYLES & NEW FONT */
+        * {
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Applied new font */
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333333;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            display: grid;
+            /* Creates 3 columns: Logo (left), Menu (center), Empty space (right) to ensure perfect centering */
+            grid-template-columns: 200px 1fr 200px; 
+            align-items: center;
+            background: white;
+            padding: 15px 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            position: relative;
+            z-index: 1000;
+        }
+
+        /* LOGO */
+        .logo {
+            grid-column: 1;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .logo img {
+            height: 70px;
+            width: auto;
+        }
+
+        /* ===== MAIN MENU (GRID LAYOUT - CENTERED) ===== */
+        .main-menu {
+            grid-column: 2;
+            display: flex;
+            justify-content: center; /* Centers the whole menu block horizontally */
+        }
+
+        .main-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            /* 5 equal columns so item 6 falls directly under item 1 */
+            grid-template-columns: repeat(5, auto); 
+            column-gap: 40px; 
+            row-gap: 15px;    
+            justify-items: center; 
+            align-items: center;
+        }
+
+        .main-menu ul li {
+            position: relative;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        .main-menu ul li a {
+            text-decoration: none;
+            color: #333333;
+            font-size: 14px;
+            font-weight: 600; /* Adjusted for the new font */
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            padding: 8px 0;
+            display: inline-block;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .main-menu ul li a:hover {
+            color: #ff6600;
+        }
+
+        /* Underline animation on hover */
+        .main-menu ul li > a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: #ff6600;
+            transition: width 0.3s ease;
+        }
+
+        .main-menu ul li:hover > a::after {
+            width: 100%;
+        }
+
+        /* ===== DROPDOWN PANEL ===== */
+        .panel-dropdown {
+            position: relative;
+        }
+
+        .dropdown-panel {
+            position: absolute;
+            top: 100%; 
+            left: 50%; 
+            transform: translateX(-50%) translateY(10px);
+            min-width: 220px; 
+            background: #ffffff;
+            padding: 10px 0;
+            border-radius: 4px;
+            border-top: 3px solid #ff6600;
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        /* Show Dropdown on Hover */
+        .panel-dropdown:hover .dropdown-panel {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(5px); 
+        }
+
+        .dropdown-panel ul {
+            display: flex;
+            flex-direction: column; 
+            padding: 0;
+            margin: 0;
+            row-gap: 0;
+        }
+
+        .dropdown-panel ul li {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            justify-content: flex-start; 
+        }
+
+        .dropdown-panel ul li a::after {
+            display: none !important; 
+        }
+
+        .dropdown-panel ul li a {
+            display: block;
+            font-size: 14px;
+            color: #444;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: 500;
+            text-transform: none;
+            width: 100%;
+            text-align: left;
+            transition: all 0.2s ease;
+        }
+
+        .dropdown-panel ul li a:hover {
+            background: #fff5eb;
+            color: #ff6600;
+            padding-left: 25px; 
+        }
+
+        /* ===== HAMBURGER MENU BUTTON (Mobile) ===== */
+        .mobile-menu-btn {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: #333;
+            background: none;
+            border: none;
+            grid-column: 3; /* Places button on the far right */
+            justify-self: end;
+        }
+
+        /* ===== RESPONSIVE DESIGN (Mobile) ===== */
+        @media (max-width: 1024px) {
+            .navbar {
+                display: flex; /* Switch back to flex for mobile */
+                justify-content: space-between;
+                padding: 10px 20px;
+            }
+
+            .logo img {
+                height: 60px;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .main-menu {
+                display: none; 
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+            }
+
+            .main-menu.show {
+                display: block;
+            }
+
+            .main-menu ul {
+                display: flex; 
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0;
+                width: 100%;
+            }
+
+            .main-menu ul li {
+                width: 100%;
+                justify-content: flex-start;
+                border-bottom: 1px solid #eee;
+            }
+
+            .main-menu ul li a {
+                padding: 15px 20px;
+                text-align: left;
+                width: 100%;
+            }
+
+            .main-menu ul li > a::after {
+                display: none;
+            }
+
+            .dropdown-panel {
+                width: 100%;
+                position: relative;
+                left: 0;
+                transform: none !important; 
+                box-shadow: none;
+                border: none;
+                border-top: 1px solid #eee;
+                background: #fafafa;
+                padding: 0;
+                opacity: 1;
+                visibility: visible;
+                display: none;
+            }
+
+            .panel-dropdown.active .dropdown-panel {
+                display: block;
+            }
+        }
+
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f9f9f9;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  p {
+    text-align: center;
+  }
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Default mobile-first: full width */
+.video-card {
+  width: 100%;
+  max-width: 100%;
+  flex: 1 1 100%;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.2s;
+  text-align: center;
+  padding: 10px;
+}
+
+  .video-card:hover {
+    transform: scale(1.03);
+  }
+
+  .video-card video {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .video-card p {
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 1rem;
+  }
+
+  /* MODAL STYLES */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .modal-content {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+  }
+
+  .modal video {
+    width: 100%;
+    border-radius: 8px;
+    max-height: 400px;
+  }
+
+  .controls {
+    margin-top: 10px;
+  }
+
+  .controls button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .controls button:hover {
+    background-color: #555;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    .video-card {
+      width: 45%;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .gallery {
+      padding: 10px;
+      gap: 15px;
+    }
+
+    .video-card {
+      width: 100%;
+      padding: 8px;
+    }
+
+    .video-card video {
+      height: 160px;
+    }
+
+    .video-card p {
+      font-size: 0.95rem;
+    }
+
+    .modal-content {
+      padding: 10px;
+    }
+
+    .modal video {
+      max-height: 250px;
+    }
+  }
+
+  /* Medium screens: 2 cards per row */
+@media (min-width: 480px) {
+  .video-card {
+    flex: 1 1 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+  }
+}
+
+/* Tablets / Small laptops: 3 cards per row */
+@media (min-width: 768px) {
+  .video-card {
+    flex: 1 1 calc(33.33% - 20px);
+    max-width: calc(33.33% - 20px);
+  }
+}
+
+/* Large screens: 4 cards per row */
+@media (min-width: 992px) {
+  .video-card {
+    flex: 1 1 calc(25% - 20px);
+    max-width: calc(25% - 20px);
+  }
+}
+
+/* Extra large desktops: 5 cards per row */
+@media (min-width: 1200px) {
+  .video-card {
+    flex: 1 1 calc(20% - 20px);
+    max-width: calc(20% - 20px);
+  }
+}
+
+  /* =========================================
+           FOOTER
+           ========================================= */
+        footer {
+            background: #333;
+            color: white;
+            padding-bottom: 5px;
+            font-size: 18px; 
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 1200px;
+            margin: auto;
+            flex-wrap: wrap;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 300px;
+            padding: 10px;
+        }
+
+        .footer-section h3 {
+            color: #ff6600;
+            margin-bottom: 12px;
+            font-size: 22px;
+        }
+
+        .footer-section.contact a {
+            color: white !important;
+            text-decoration: none !important;
+            font-weight: normal;
+        }
+
+        .footer-section.contact a:hover {
+            color: #ff6600 !important;
+            text-decoration: underline !important;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 15px;
+        }
+
+        .footer-section ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            transition: color 0.3s ease, text-decoration 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: #ff6600;
+            text-decoration: underline;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            justify-content: center; 
+            margin-right: 205px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 24px;
+            transition: transform 0.2s ease, color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #ff6600;
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 480px) {
+            .social-icons {
+                gap: 10px;
+                font-size: 20px;
+            }
+            .social-icons a {
+                font-size: 20px;
+            }
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 16px;
+            padding-top: 10px;
+            border-top: 1px solid #ff6600;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 1024px) {
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-section {
+                padding: 10px 0;
+            }
+        }
+
+        /* Google Map */
+        .map-container {
+            width: 100%;
+            max-width: 550px;
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 300px;
+            border: 0;
+        }
+
+        @media (max-width: 768px) {
+            .map-container iframe { height: 250px; }
+        }
+
+        @media (max-width: 480px) {
+            .map-container iframe { height: 200px; }
+        }
+
+        /* =========================================
+           FIXED BUTTONS
+           ========================================= */
+        .fixed-buttons .btn-circle {
+            width: 50px;
+            height: 50px;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            line-height: 1;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .whatsapp-btn {
+            background-color: #25D366;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #1ebe5b;
+        }
+
+        .scroll-top-btn1 {
+            background-color: #ff6600;
+        }
+
+        .scroll-top-btn1:hover {
+            background-color: #0090f7;
+        }
+
+        @media (max-width: 480px) {
+            .fixed-buttons .btn-circle {
+                width: 45px;
+                height: 45px;
+                font-size: 20px;
+            }
+        }
+
+ /* =========================================
+           BREADCRUMBS
+           ========================================= */
+        .breadcrumbs {
+            background-color: #f4f6f9; 
+            padding: 15px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .breadcrumb-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .breadcrumbs ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            font-family: inherit;
+        }
+
+        .breadcrumbs ul li {
+            display: inline-flex;
+            align-items: center;
+            color: #555;
+        }
+
+        .breadcrumbs ul li a {
+            text-decoration: none;
+            color: #0056b3; 
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px; 
+        }
+
+        .breadcrumbs ul li a:hover {
+            color: #ff6600; 
+        }
+
+        .breadcrumbs ul li.separator {
+            margin: 0 10px;
+            font-size: 12px;
+            color: #999;
+        }
+
+        .breadcrumbs ul li.active {
+            color: #333;
+            font-weight: 600;
+        }
+</style>
+
+</head>
+<body>
+
+    <!-- HEADER -->
+     <header>
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="/Admark Code_Final/assets/logo1.jpg" alt="Admark Digitech Logo">
+                </a>
+            </div>
+
+            <div class="mobile-menu-btn" id="mobile-menu-btn">
+                ☰
+            </div>
+
+            <nav class="main-menu" id="main-menu">
+                <ul>
+                    <li><a href="/Admark Code_Final/index.html">Home</a></li>
+                    <li><a href="/Admark Code_Final/about.html">About Us</a></li>
+
+                    <li class="panel-dropdown">
+                        <a href="/Admark Code_Final/printers.html">Digital Printers</a>
+                        <div class="dropdown-panel">
+                            <ul>
+                                <li><a href="/Admark Code_Final/flex.html">Flex</a></li>
+                                <li><a href="/Admark Code_Final/eco_solvent.html">Eco Solvent</a></li>
+                                <li><a href="/Admark Code_Final/uv_flated.html">UV Flatbed</a></li>
+                                <li><a href="/Admark Code_Final/uv_Hybrid.html">UV Hybrid</a></li>
+                                <li><a href="/Admark Code_Final/uv_roll_to_roll.html">UV Roll To Roll</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="panel-dropdown">
+                        <a href="/Admark Code_Final/cnc-router.html">CNC Router</a>
+                        <div class="dropdown-panel">
+                            <ul>
+                                <li><a href="/Admark Code_Final/cnc_Router_4'x8'.html">4' x 8'</a></li>
+                                <li><a href="/Admark Code_Final/cnc_Router_5'x10'.html">5' x 10'</a></li>
+                                <li><a href="/Admark Code_Final/cnc_Router_DoubleSpindle.html">Double Spindle</a></li>
+                                <li><a href="/Admark Code_Final/cnc_Router_PatternStone_Marking.html">Pattern/Stone Making</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="panel-dropdown">
+                        <a href="/Admark Code_Final/cnc-laser.html">CNC Laser</a>
+                        <div class="dropdown-panel">
+                            <ul>
+                                <li><a href="/Admark Code_Final/cnc_Laser_2x3.html">2' x 3' CNC Laser</a></li>
+                                <li><a href="/Admark Code_Final/cnc_Laser_4x3.html">4' x 3' CNC Laser</a></li>
+                                <li><a href="/Admark Code_Final/cnc_Laser_4x4.html">4' x 4' CNC Laser</a></li>
+                                <li><a href="/Admark Code_Final/cnc_Laser_8x4.html">8' x 4' CNC Laser</a></li>
+                                <li><a href="/Admark Code_Final/cnc_Laser_CCD.html">CCD</a></li>
+                                <li><a href="/Admark Code_Final/cnc_Laser_FiberLaser.html">Fiber Laser</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="panel-dropdown">
+                        <a href="/Admark Code_Final/led-display.html">LED Display</a>
+                        <div class="dropdown-panel">
+                            <ul>
+                                <li><a href="/Admark Code_Final/led_Display_Indoor.html">Indoor LED Display</a></li>
+                                <li><a href="/Admark Code_Final/led_Display_Outdoor.html">Outdoor LED Display</a></li>
+                                <li><a href="/Admark Code_Final/led_Display_Vehicle.html">Vehicle LED Display</a></li>
+                                <li><a href="/Admark Code_Final/led_Display_Rental.html">Rental LED Display Services</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="panel-dropdown">
+                        <a href="/Admark Code_Final/chennel-Bending.html">CNC Channel Bending</a>
+                        <div class="dropdown-panel">
+                            <ul>
+                                <li><a href="/Admark Code_Final/chennel_Bending_Aluminium.html">Aluminum</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="panel-dropdown">
+                        <a href="/Admark Code_Final/video-gallery.html">Video Gallery</a>
+                        <div class="dropdown-panel">
+                            <ul>
+                                <li><a href="/complete_project.html">Complete Project</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li><a href="/Admark Code_Final/contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="breadcrumbs">
+        <div class="breadcrumb-container" id="dynamic-breadcrumbs">
+            </div>
+    </div>
+    
+  <section>
+    <h2>OUR PRODUCT VIDEOS</h2>
+    <p>Click on a video to play in popup</p>
+    <div class="gallery">
+
+      <div class="video-card" data-src="assets/videos/Flex 512 42 PL.mp4">
+        <video src="assets/videos/Flex 512 42 PL.mp4" muted  playsinline></video>
+        <p>Flex 512 42 PL</p>
+      </div>
+
+      <div class="video-card" data-src="assets/videos/Admark CK8+ 30 PL.mp4">
+        <video src="assets/videos/Admark CK8+ 30 PL.mp4" muted playsinline></video>
+        <p>Admark CK8+ 30 PL</p>
+      </div>
+
+      <div class="video-card" data-src="assets/videos/Aethra C8 Positive Pressure.mp4">
+        <video src="assets/videos/Aethra C8 Positive Pressure.mp4" muted playsinline></video>
+        <p>Aethra C8 Positive Pressure</p>
+      </div>
+
+       <div class="video-card" data-src="assets/videos/Allwin 512i C8 C8+ 30 PL Negative Pressure.mp4">
+        <video src="assets/videos/Allwin 512i C8 C8+ 30 PL Negative Pressure.mp4" muted playsinline></video>
+        <p>Allwin 512i C8/C8+ 30 PL Negative Pressure</p>
+      </div>
+
+      <div class="video-card" data-src="assets/videos/Aethra 512i A8 30 PL Negative Pressure.mp4">
+        <video src="assets/videos/Aethra 512i A8 30 PL Negative Pressure.mp4" muted playsinline></video>
+        <p>Aethra 512i A8 30 PL Negative Pressure</p>
+      </div>
+
+      <div class="video-card" data-src="assets/videos/Aethra 512i A8+ 30 PL Negative Pressure.mp4">
+        <video src="assets/videos/Aethra 512i A8+ 30 PL Negative Pressure.mp4" muted playsinline></video>
+        <p>Aethra 512i A8+ 30 PL Negative Pressure</p>
+      </div>
+
+       <div class="video-card" data-src="assets/videos/Allwin 1024i C8+ 30 13 PL Negative Pressure.mp4">
+        <video src="assets/videos/Allwin 1024i C8+ 30 13 PL Negative Pressure.mp4" muted  playsinline></video>
+        <p>Allwin 1024i C8+ 30/13 PL Negative Pressure</p>
+      </div>
+
+      <div class="video-card" data-src="assets/videos/Aethra 1024i A8+ 30 13 PL Negative Pressure.mp4">
+        <video src="assets/videos/Aethra 1024i A8+ 30 13 PL Negative Pressure.mp4" muted  playsinline></video>
+        <p>Aethra 1024i A8+ 30/13 PL Negative Pressure</p>
+      </div>
+
+      <div class="video-card" data-src="assets/videos/Aethra 1024i R8i 30 13 PL Negative Pressure.mp4">
+        <video src="assets/videos/Aethra 1024i R8i 30 13 PL Negative Pressure.mp4" muted playsinline></video>
+        <p>Aethra 1024i R8i 30/13 PL Negative Pressure</p>
+      </div>
+
+       <div class="video-card" data-src="assets/videos/Aethra Starfire AS4 25 10 PL Negative Pressure.mp4">
+        <video src="assets/videos/Aethra Starfire AS4 25 10 PL Negative Pressure.mp4" muted playsinline></video>
+        <p>Aethra Starfire AS4 25/10 PL Negative Pressure</p>
+      </div>
+
+      <div class="video-card" data-src="assets/videos/Eco Solvent Gethray 1.8m.mp4">
+        <video src="assets/videos/Eco Solvent Gethray 1.8m.mp4" muted  playsinline></video>
+        <p>Eco Solvent Gethray 1.8m</p>
+      </div>
+
+      <div class="video-card" data-src="assets/videos/UV Flated 2' x 3'.mp4">
+        <video src="assets/videos/UV Flated 2' x 3'.mp4" muted  playsinline></video>
+        <p>UV Flatbed 2' x 3'</p>
+      </div>
+
+      <div class="video-card" data-src="assets/videos/UV Flated 8' x 4'.mp4">
+        <video src="assets/videos/UV Flated 8' x 4'.mp4" muted  playsinline></video>
+        <p>UV Flatbed 8' x 4'</p>
+      </div> 
+
+        <div class="video-card" data-src="assets/videos/UV Hybrid 1.8m.mp4">
+        <video src="assets/videos/UV Hybrid 1.8m.mp4" muted playsinline></video>
+        <p>UV Hybrid 1.8m</p>
+      </div>
+        <div class="video-card" data-src="assets/videos/UV Hybrid 3.2m.mp4">
+        <video src="assets/videos/UV Hybrid 3.2m.mp4" muted  playsinline></video>
+        <p>UV Hybrid 3.2m</p>
+      </div>
+        <div class="video-card" data-src="assets/videos/UV Roll To Roll Double Head Body.mp4">
+        <video src="assets/videos/UV Roll To Roll Double Head Body.mp4" muted  playsinline></video>
+        <p>UV Roll To Roll Double Head Body</p>
+      </div>
+        <div class="video-card" data-src="assets/videos/UV Roll To Roll Four Head Body.mp4">
+        <video src="assets/videos/UV Roll To Roll Four Head Body.mp4" muted playsinline></video>
+        <p>UV Roll To Roll Four Head Body</p>
+      </div>
+        <div class="video-card" data-src="assets/videos/UV Roll To Roll 3.2m.mp4">
+        <video src="assets/videos/UV Roll To Roll 3.2m.mp4" muted  playsinline></video>
+        <p>UV Roll To Roll 3.2m</p>
+      </div>
+        <div class="video-card" data-src="assets/videos/CNC Channel Bending.mp4">
+        <video src="assets/videos/CNC Channel Bending.mp4" muted  playsinline></video>
+        <p>CNC Channel Bending</p>
+      </div>
+        <div class="video-card" data-src="assets/videos/CNC Router 4' x 8'.mp4">
+        <video src="assets/videos/CNC Router 4' x 8'.mp4" muted  playsinline></video>
+        <p>CNC Router 4' x 8'</p>
+      </div>
+        <div class="video-card" data-src="assets/videos/CNC Router 5' x 10'.mp4">
+        <video src="assets/videos/CNC Router 5' x 10'.mp4" muted  playsinline></video>
+        <p>CNC Router 5' x 10'</p>
+      </div>
+        <div class="video-card" data-src="assets/videos/CNC Router Double Spindle.mp4">
+        <video src="assets/videos/CNC Router Double Spindle.mp4" muted  playsinline></video>
+        <p>CNC Router Double Spindle</p>
+      </div>
+        <div class="video-card" data-src="assets/videos/CNC Router Pattern Making.mp4">
+        <video src="assets/videos/CNC Router Pattern Making.mp4" muted  playsinline></video>
+        <p>CNC Router Pattern Making</p>
+      </div>
+        <div class="video-card" data-src="assets/videos/CNC Laser 2' x 3'.mp4">
+        <video src="assets/videos/CNC Laser 2' x 3'.mp4" muted  playsinline></video>
+        <p>CNC Laser 2' x 3'</p>
+      </div>
+        <div class="video-card" data-src="assets/videos/CNC Laser 4' x 3'.mp4">
+        <video src="assets/videos/CNC Laser 4' x 3'.mp4" muted  playsinline></video>
+        <p>CNC Laser 4' x 3'</p>
+      </div>
+      <div class="video-card" data-src="assets/videos/CNC Laser 4' x 4'.mp4">
+        <video src="assets/videos/CNC Laser 4' x 4'.mp4" muted  playsinline></video>
+        <p>CNC Laser 4' x 4'</p>
+      </div>
+      <div class="video-card" data-src="assets/videos/CNC Laser 8' x 4'.mp4">
+        <video src="assets/videos/CNC Laser 8' x 4'.mp4" muted  playsinline></video>
+        <p>CNC Laser 8' x 4'</p>
+      </div>
+      <div class="video-card" data-src="assets/videos/CNC Laser CCD.mp4">
+        <video src="assets/videos/CNC Laser CCD.mp4" muted  playsinline></video>
+        <p>CNC Laser CCD</p>
+      </div>
+      <div class="video-card" data-src="assets/videos/Fiber Laser.mp4">
+        <video src="assets/videos/Fiber Laser.mp4" muted  playsinline></video>
+        <p>Fiber Laser</p>
+      </div>
+      <div class="video-card" data-src="assets/videos/Chennel Bending - Aluminum.mp4">
+        <video src="assets/videos/Chennel Bending - Aluminum.mp4" muted  playsinline></video>
+        <p>CNC Channel Bending – Aluminum</p>
+      </div>
+      <div class="video-card" data-src="assets/videos/UV6090_AI_basedSystem_With_Camera.mp4">
+        <video src="assets/videos/UV6090_AI_basedSystem_With_Camera.mp4" muted  playsinline></video>
+        <p>UV 6090 AI Based System With Camera</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL -->
+  <div class="modal" id="videoModal">
+    <div class="modal-content">
+      <video id="modalVideo" controls>
+        <source src="" type="video/mp4">
+        Your browser does not support video playback.
+      </video>
+      <div class="controls">
+        <button id="playBtn"><i class="fas fa-play"></i> Start</button>
+        <button id="pauseBtn"><i class="fas fa-pause"></i> Stop</button>
+        <button id="closeBtn"><i class="fas fa-times"></i> Exit</button>
+      </div>
+    </div>
+  </div>
+
+
+     <!-- FOOTER -->
+     <footer>
+        <div class="footer-content">
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+                <p>📍 Address: 97 - 100, G Wing, 3rd Floor, KK Market, Pune Satara Road, Behind Shankar Maharaj Math, Balajinagar, Pune PIN: 411043</p>
+                <p>📞 Phone: <a href="tel:+919743929666">+91 9743929666</a></p>
+                <p>📞 Phone: <a href="tel:+919075557349">+91 9075557349</a></p>
+                <p>📞 Phone: <a href="tel:+919765560814">+91 9765560814</a></p>
+                <p>📧 Email: <a href="mailto:Anita@admarkdigitek.com">Anita@admarkdigitek.com</a></p>
+                <p>📧 Email: <a href="mailto:Gandharvdeshmukh@gmail.com">Gandharvdeshmukh@gmail.com</a></p>
+            </div>
+
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/about.html">About Us</a></li>
+                    <li><a href="/video-gallery.html">Video Gallery</a></li>
+                    <li><a href="/contact.html">Contact Us</a></li>
+                </ul>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/admarkdigitech?igsh=MTJtb3JscDA2NnlibQ==" target="_blank">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/admark.digitech?mibextid=wwXIfr" target="_blank">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/admark-digitech-384762358" target="_blank">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3424.609051563073!2d73.85773827465097!3d18.469326570738595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2eab8a1c28f73%3A0xf66b73ea426aabbe!2sAdmark%20Digitech%20Pvt%20Ltd!5e1!3m2!1sen!2sin!4v1742989654384!5m2!1sen!2sin"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Admark Digitech Private Limited. All Rights Reserved.</p>
+            <p>Developed By DW Innovation Pvt. Ltd.</p>
+        </div>
+
+        <div class="fixed-buttons">
+            <a href="https://wa.me/919743592555?text=Hello%20Admark%20Digitech,%20I%20need%20to%20enquire." target="_blank" class="btn-circle whatsapp-btn">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+
+            <button id="scrollToTop" class="btn-circle scroll-top-btn1">
+                <i class="fa-solid fa-arrow-up"></i>
+            </button>
+        </div>
+    </footer>
+
+        <div id="chatbot-container">
+  <button id="chatbot-toggle-btn">💬</button>
+
+  <div id="chatbot-window" class="hidden">
+    
+    <div class="chat-header">
+      <span>Support Chat</span>
+      <button id="chatbot-close-btn">&times;</button>
+    </div>
+    
+    <div class="chat-body">
+      <div class="message bot-message">
+        <p>Hello! How can I help you today?</p>
+      </div>
+      </div>
+    
+    <div class="chat-footer">
+      <input type="text" id="chat-input" placeholder="Type a message...">
+      <button id="chat-send-btn">Send</button>
+    </div>
+
+  </div>
+</div>
+    
+  <script src="assets/"></script>
+  <script>
+    const modal = document.getElementById("videoModal");
+    const modalVideo = document.getElementById("modalVideo");
+    const playBtn = document.getElementById("playBtn");
+    const pauseBtn = document.getElementById("pauseBtn");
+    const closeBtn = document.getElementById("closeBtn");
+
+    document.querySelectorAll(".video-card").forEach(card => {
+      card.addEventListener("click", () => {
+        const videoSrc = card.getAttribute("data-src");
+        modalVideo.src = videoSrc;
+        modal.style.display = "flex";
+        modalVideo.play();
+      });
+    });
+
+    playBtn.onclick = () => modalVideo.play();
+    pauseBtn.onclick = () => modalVideo.pause();
+    closeBtn.onclick = () => {
+      modal.style.display = "none";
+      modalVideo.pause();
+      modalVideo.src = "";
+    };
+
+    window.onclick = (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+        modalVideo.pause();
+        modalVideo.src = "";
+      }
+    };
+  </script>
+
+</body>
+</html>

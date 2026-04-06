@@ -472,6 +472,36 @@
             transform: scale(1.2);
         }
 
+                .footer-section.links {
+    margin-left: 50px; /* Adjust this value to increase or decrease the space */
+}
+
+/* Ensure it resets on mobile screens so it doesn't look off-center */
+@media (max-width: 1024px) {
+    .footer-section.links {
+        margin-left: 0;
+    }
+}
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    justify-content: flex-start; /* Aligns icons to the left, matching the links above them */
+    flex-wrap: nowrap; /* Forces the icons to stay on the same line */
+}
+
+/* Updated mobile query for better alignment on small screens */
+@media (max-width: 480px) {
+    .social-icons {
+        gap: 10px;
+        justify-content: center; /* Centers them nicely on mobile */
+    }
+    .social-icons a {
+        font-size: 20px;
+    }
+}
+
+
         @media (max-width: 480px) {
             .social-icons {
                 gap: 10px;
@@ -771,7 +801,7 @@
                 <p>📞 Phone: <a href="tel:+919743929666">+91 9743929666</a></p>
                 <p>📞 Phone: <a href="tel:+919075557349">+91 9075557349</a></p>
                 <p>📞 Phone: <a href="tel:+919765560814">+91 9765560814</a></p>
-                <p>📧 Email: <a href="mailto:Anita@admarkdigitek.com">Anita@admarkdigitek.com</a></p>
+                <p style="white-space: nowrap;">📧 Email: <a href="mailto:Anita@admarkdigitek.com">Anita@admarkdigitek.com</a></p>
                 <p style="white-space: nowrap;">📧 Email: <a href="mailto:Gandharvdeshmukh@gmail.com">Gandharvdeshmukh@gmail.com</a></p>
             </div>
 

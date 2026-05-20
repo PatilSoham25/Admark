@@ -224,7 +224,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         const breadcrumbMap = {
-            "index.html": { parent: null, current: "Home" },
             "about.html": { parent: null, current: "About Us" },
             "contact.html": { parent: null, current: "Contact Us" },
             "printers.html": { parent: null, current: "Digital Printers" },
@@ -276,4 +275,68 @@ document.addEventListener("DOMContentLoaded", () => {
             console.warn("Breadcrumb Error: Current page filename '" + page + "' not found in breadcrumbMap.");
         }
     }
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const faqQuestions = document.querySelectorAll(".faq-question");
+
+  faqQuestions.forEach((question) => {
+    question.addEventListener("click", () => {
+      const currentItem = question.parentElement;
+      const answer = currentItem.querySelector(".faq-answer");
+      
+      // Close all other open items (Optional: remove this block if you want multiple open at once)
+      document.querySelectorAll(".faq-item").forEach((item) => {
+        if (item !== currentItem) {
+          item.classList.remove("active");
+          item.querySelector(".faq-answer").style.maxHeight = null;
+        }
+      });
+
+      // Toggle current item
+      currentItem.classList.toggle("active");
+      
+      if (currentItem.classList.contains("active")) {
+        answer.style.maxHeight = answer.scrollHeight + "px";
+      } else {
+        answer.style.maxHeight = null;
+      }
+    });
+  });
+});
+
+
+
+// Ensure GSAP is loaded
+gsap.from(".floating-contact-btn", {
+  duration: 1,
+  y: 100,
+  opacity: 0,
+  ease: "expo.out",
+  delay: 1.5 // Appears after the initial hero animation
+});
+
+// Magnetic hover effect
+const btn = document.querySelector(".floating-contact-btn");
+btn.addEventListener("mousemove", (e) => {
+  const { offsetX, offsetY, target } = e;
+  const { clientWidth, clientHeight } = target;
+  
+  const xPos = (offsetX / clientWidth - 0.5) * 20;
+  const yPos = (offsetY / clientHeight - 0.5) * 20;
+
+  gsap.to(btn, {
+    x: xPos,
+    y: yPos,
+    duration: 0.3
+  });
+});
+
+btn.addEventListener("mouseleave", () => {
+  gsap.to(btn, {
+    x: 0,
+    y: 0,
+    duration: 0.3
+  });
 });

@@ -87,6 +87,7 @@ body, html {
             transition: color 0.3s ease;
             display: flex;
             align-items: center;
+            /* white-space: nowrap; */
         }
 
         .main-menu ul li a:hover {
@@ -105,7 +106,8 @@ body, html {
             top: 100%; 
             left: 50%; 
             transform: translateX(-50%) translateY(10px);
-            min-width: 240px; 
+            min-width: 240px;
+            width: max-content; /* ADDED: Allows the panel to grow wide enough for the text */
             background: #ffffff;
             padding: 12px 0;
             border-radius: 4px;
@@ -136,6 +138,9 @@ body, html {
             font-weight: 500;
             color: #555;
             background: transparent;
+            text-align: left; /* <--- ADDED: Forces text to align neatly to the left */
+            white-space: nowrap; /* <--- ADDED: Prevents dropdown items from breaking into two lines */
+            display: block; /* <--- ADDED: Ensures the whole row is clickable and alignment works */
         }
 
         .dropdown-panel ul li a:hover {
